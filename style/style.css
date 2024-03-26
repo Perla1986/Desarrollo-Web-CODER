@@ -1,0 +1,23 @@
+
+body{text-align: center;}
+
+nav ul{
+    background-color: lavender;
+    text-align: center;
+    list-style: none;
+    color: darkviolet;
+}
+
+main {text-align: center;}
+
+header h1{list-style: none; 
+          text-align:center; 
+          color: #8a2a70;
+        }
+
+main ul li {list-style: none;
+background-color: lavender;
+  text-align: left;
+  font-size: large;
+  font-weight: 300;
+}
