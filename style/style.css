@@ -2,113 +2,138 @@
 *{
 margin: 0;
 padding: 0;
+box-sizing: border-box;
 }
+
+/*Estilos generales*/ 
 
 .logo {
   max-width: 100px;
   height: auto;
+  display: flex;
+  align-items: center;
 }
 
-body{
-text-align: center;
+body, html{
+margin: 0;
+padding: 0;
+height: 100%;
 }
+
+h1{
+  text-align: center;
+  display: flex
+}
+
+.gridContainer {
+  display: grid;
+  grid-template-areas:
+      "header header"
+      "navIzq navDer"
+      "img img"      
+      "parrafo parrafo"
+      "footer footer";
+  grid-template-columns:auto;
+  grid-template-rows: 100px 100px auto 1fr 100px;
+  flex-direction: column;
+  justify-items: center;
+  text-align:center;
+}
+
+/*Estilos de la cabecera*/ 
 
 header{
-  margin: 0px 10px;
+  grid-area: header;
   display: flex;
-}
-
-header nav ul{
-position: fixed;
-background-color: lavender;
-text-align: right;
-list-style: none;
-color: darkviolet;
-display: flex;
-gap: 20px;
+  text-align: center;
 }
 
 .color-bg{
   background-color:lavender;
 }
 
-body h1, body h2, body h3{
-text-align: center; 
-color: #8a2a70;
+div.navIzq {
+  grid-area: navIzq;
 }
 
-main {
-  min-height:calc (45vh - 70px);
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: repeat(1,25%);
-  row-gap: 1rem;
-  text-align: center;
-  margin: 3rem 2rem;
+.navIzq ul,
+.navDer ul {
+  display: flex;
+  justify-content: space-around;
 }
 
-main div img{
-  width: 100%;
-  height: 100%;
-  object-fit:cover;
+li {
+  padding: 10px;
+  list-style-type: none;
 }
 
-main video{
+div.navDer {
+  grid-area: navDer;
+}
+
+section.parrafo {
+text-align: center;
+margin-top: 10px;
+}
+
+.contenedor {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contenedor img {
+ grid-area: img;
+ max-width: 100%;
+ max-height: 100%;
+}
+
+.main video{
   width: 100%;
   height:100%;
 }
 
-main div p{
-  align-self:auto;
-}
-
-main ul li {
-list-style: none;
-color: lavender;
-text-align: right;
-font-size: large;
-font-weight: 300;
-}
-
-section p{
-  padding-top: 70px;
-  padding-bottom: 70px;
-  display: flex;
-  text-align: center;
-}
-
 footer h4{
+  grid-area: footer;
   display: flex;
-  position: fixed;
-  margin-top: 20px;
-  bottom: 0;
-  width: 100%;
-  background-color: #f8f8f8;
-  padding: 20px 0;
+  justify-content: space-around;
+  padding-top: 30px
+  background-color #f8f8f8;
   text-align:center;
 }
-
 
 /* mq de tablet */
 
 @media screen and (min-width:600px) {
-  main{
-    height: 65vh;
-    grid-template-columns: repeat(1, 1fr);
-    grid-template-rows: repeat(1,50%);
+  .grid {
+    flex-direction: column;
+    align-items: center;
   }
+  .parrafo {
+    display: flex;
+  }
+
   footer{
-    position:relative;
+    position:bottom;
     bottom: auto;
-    width: auto;
+    width:auto;
   }
 }
 
 /* mq desktop */
 
 @media screen and (min-width:1024px) {
-main{
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(2,50%);
 }
+
+header {
+  text-align: center;
 }
+
+li {
+  position: relative;
+  top: 20px;
+
+}
+
